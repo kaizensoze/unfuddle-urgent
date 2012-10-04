@@ -5,12 +5,15 @@ require 'date'
 require 'json'
 
 def check_tickets()
+  auth = File.open('auth.txt', &:readline)
+  user, pass = auth.split(/:/)
+
   url = "https://elephantventures.unfuddle.com/api/v1/projects/1042/tickets?format=json"
 
   c = Curl::Easy.new(url)
   c.http_auth_types = :basic
-  c.username = 'XXXXX'
-  c.password = 'XXXXX'
+  c.username = user
+  c.password = pass
   c.perform
 
   ticket_data = c.body_str
