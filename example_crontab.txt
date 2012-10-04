@@ -1,0 +1,3 @@
+*/5 * * * * cd ~/dev/unfuddle-urgent && /usr/local/bin/ruby urgent.rb
+#* * * * * cd ~/dev/unfuddle-urgent && ruby test.rb
+#* * * * * afplay ~/dev/unfuddle-urgent/foreigner_urgent_part.mp3
