@@ -4,3 +4,6 @@ minutes and if any of them are priority >= High, it plays a particular notificat
 in this case Foreigner - Urgent.
 
 Only works on OSX since it's using afplay to play audio.
+
+Resources
+  https://unfuddle.com/docs/api
