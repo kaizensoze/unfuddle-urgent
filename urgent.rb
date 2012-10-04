@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 require 'curb'
 require 'date'
 require 'json'
@@ -27,7 +25,7 @@ def check_tickets()
     time_ago = DateTime.now - ticket_datetime
     time_ago_in_minutes = (time_ago * 24 * 60).to_i
     
-    if time_ago_in_minutes < 5000  # or whatever you set the crontab at
+    if time_ago_in_minutes < 5  # or whatever you set the crontab at
       if ticket['priority'].to_i >= 4
         `afplay foreigner_urgent_part.mp3`
         break
