@@ -17,7 +17,7 @@ def check_tickets()
   report = JSON.parse(c.body_str)
   # puts JSON.pretty_generate(report)
   tickets_remaining = report['groups'][0]['tickets'].length
-  `say 'Tickets remaining: #{tickets_remaining}.'`
+  `say '#{tickets_remaining} tickets remaining.'`
 end
 
 if __FILE__ == $0
