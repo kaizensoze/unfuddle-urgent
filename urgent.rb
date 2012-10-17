@@ -15,8 +15,8 @@ def check_tickets()
   c.perform
 
   ticket_data = c.body_str
-  # puts JSON.pretty_generate(ticket)
   tickets = JSON.parse(ticket_data)
+  # puts JSON.pretty_generate(ticket)
 
   tickets.each do |ticket|
     ticket_created_at = ticket['created_at']
@@ -25,7 +25,7 @@ def check_tickets()
     time_ago = DateTime.now - ticket_datetime
     time_ago_in_minutes = (time_ago * 24 * 60).to_i
     
-    if time_ago_in_minutes < 5  # or whatever you set the crontab at
+    if time_ago_in_minutes <= 5  # or whatever you set the crontab at
       if ticket['priority'].to_i >= 4
         `afplay foreigner_urgent_part.mp3`
         break
